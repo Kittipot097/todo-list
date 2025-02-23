@@ -1,42 +1,152 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.todo-app {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 24px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.title {
+    text-align: center;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.container-action {
+    display: flex;
+    justify-content: space-between;
 }
 
-.card {
-  padding: 2em;
+.box-card-container {
+    background-color: rgba(176, 168, 185, 0.1);
+    padding: 24px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
-.read-the-docs {
-  color: #888;
+.task-list-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.task-list-card.completed p {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.task-list-card-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.task-list-card-title {
+    font-size: 18px;
+    font-weight: 600;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.check-box {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+}
+
+.task-list-card-timestamp {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.task-list-card-action {
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    gap: 8px;
+}
+
+.btn-cancel {
+  background-color: rgba(176, 168, 185, 0.1);
+  color: #4b4453;
+}
+
+.btn-cancel:hover {
+    background-color: rgba(176, 168, 185, 0.1);
+    color: #646cff;
+}
+
+.btn-delete {
+    background-color: #ef5b43;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #ce3e2b;
+    color: white;
+}
+
+.btn-action {
+  background-color: rgba(176, 168, 185, 0.5);
+}
+
+.btn-action:hover {
+    background-color: rgba(176, 168, 185, 0.4);
+}
+
+/* modal styling */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    text-align: center;
+    width: 100%;
+    max-width: 480px;
+    margin:16px;
+}
+
+.box-modal-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.box-modal-action {
+    display: flex;
+    justify-content: end;
+    gap: 8px;
+    margin-top: 40px;
+}
+
+@media screen and (max-width: 430px) {
+    .task-list-card {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .task-list-card-action {
+      margin-top: 16px;
+    }
 }
